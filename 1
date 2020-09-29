@@ -99,6 +99,7 @@ int main() {
         cout << (j.length() / static_cast<float>(l)) << endl;
     cout << "#3" << endl;
     int l1,l2;
+    std::string in2="Make";
     cout << "l1: " << endl;
     cin >> l1;
     cout << "l2: ";
@@ -106,28 +107,23 @@ int main() {
     cout << j.substr(l1-1,l2-l1+1) << endl;
     cout << "#4 " << endl;
     std::string in = "Can you can a can as a canner can can a can?";
-    std::string in2 = "make";
-    std::string output;
-    char first = std::toupper(in2.front());
-    std::string second = in.substr(1, in.length());
-    output = first + second;
-    int u= in.find("can",0);
-        in.replace(u, 3, output);
-        u = in.find("Can", u);
-    int it2 = in.find("can", 0);
-    while (it2 != std::string::npos)
-    {
-        in.replace(it2, 3, in2);
-        it2 = in.find("can", it2);
-
+    in.erase(0,3);
+    std::string d="make";
+    
+    std::cout<< std::endl;
+    for (int i = 4; i<=19; i++) {
+        if (in.substr(i, 3) == "can") {
+            in.erase(i, 3);
+            in.insert(i, d);
+        }
     }
-    std::cout << in;
-
-
-
-
-
-
+            for (int i = 29; i<=in.length(); i++){
+                if (in.substr(i,3) == "can")  {
+                    in.erase(i,3);
+                    in.insert(i, d);
+        }
+    }
+    std::cout << (in2+in) << std::endl;
         return 0;
 
 }
