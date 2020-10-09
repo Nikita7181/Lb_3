@@ -10,7 +10,7 @@ using std::cout;
 using std::cin;
 
 int main() {
-    int l=0,sum = 0, k1, k2, n, arr[10];
+    int l=0,sum = 0, k1=0, k2=0, n=0, arr[10];
     cout << "Task 1" << endl;
     std::srand(std::time(nullptr));
     for (int i = 0; i <= 9; i++) {
@@ -73,7 +73,17 @@ int main() {
     }
     cout  << u << endl;
     cout << "#4" << endl;
-
+    for(int i=0; i < m; i++)
+    {   if (arr3[i]<0)
+        {
+            for(int j=i;j<m;j++)
+                if (arr3[i]<0){
+                    arr3[i] = arr3[0];
+                arr3[0]=arr3[i];}
+            break;
+        }
+    }
+    for(int i=1; i <m; i++) cout<<arr3[i]<<" "<<endl;
     cout << "Task 4"<< endl;
     cout << "#1" << endl;
     std::string j;
