@@ -36,7 +36,7 @@ int main() {
         if (b[i] % 2 == 0) {
             b[i] = pow(b[i], 2);
             cout << "b[" << i << "]= " << b[i] << endl;
-
+            
         }
     }
     cout << "#3" << endl;
@@ -75,16 +75,13 @@ int main() {
     }
     cout << "#4" << endl;
     for(int i=0; i < m; i++)
-    {   if (arr3[i]<0)
+    {   if (arr3[i]>0)
         {
-            for(int j=i;j<m;j++)
-                if (arr3[i]<0){
-                    arr3[i] = arr3[0];
-                arr3[0]=arr3[i];}
+        arr3.erase(arr3.begin()+1);
             break;
         }
     }
-    for(int i=1; i <m; i++) cout<<arr3[i]<<" "<<endl;
+    for(int i=0; i <m; i++) cout<<arr3[i]<<" "<<endl;
     cout << "Task 4"<< endl;
     cout << "#1" << endl;
     std::string j;
@@ -96,7 +93,7 @@ int main() {
     cout << j.length()<< endl;
     for( int i : j) {
         if ((i == 'A') || (i == 'A') || (i == 'E') || (i == 'e') || (i == 'I') || (i == 'i') || (i == 'O') ||
-            (i == 'o') || (i == 'U') || (i == 'u')) {
+                (i == 'o') || (i == 'U') || (i == 'u')) {
             l++;
         }
     }
@@ -135,5 +132,5 @@ int main() {
     in.insert(0,k);
     cout << in << endl;
     return 0;
-
+    
 }
