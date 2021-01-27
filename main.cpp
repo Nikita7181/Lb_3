@@ -4,6 +4,7 @@
 #include <ctime>
 #include <cmath>
 #include <string>
+#include <algorithm>
 using std::endl;
 using std::rand;
 using std::cout;
@@ -67,11 +68,11 @@ int main() {
         cout  << i << endl;
     }
     cout << "#3" << endl;
-    int u;
-    for (int i : arr3) {
+    float u;
+    for (float i : arr3) {
         u=static_cast<float>(i) / arr3.back();
+        cout  << u << endl;
     }
-    cout  << u << endl;
     cout << "#4" << endl;
     for(int i=0; i < m; i++)
     {   if (arr3[i]<0)
@@ -109,12 +110,15 @@ int main() {
     cout << j.substr(l1-1,l2-l1+1) << endl;
     cout << "#4 " << endl;
     std::string in = "Can you can a can as a canner can can a can?";
-    std::string in2="Make";
-    in.erase(0,3);
     std::string d;
     cin >> d;
-    for (int i = 4; i<=19; i++) {
-        if (in.substr(i, 3) == "can") {
+    for (int i = 0; i<=19; i++)
+    {
+        if ((in.substr(i, 3) == "Can")) {
+            in.erase(i, 3);
+            in.insert(i, d);
+        }
+        if ((in.substr(i, 3) == "can")) {
             in.erase(i, 3);
             in.insert(i, d);
         }
@@ -125,7 +129,11 @@ int main() {
             in.insert(i, d);
         }
     }
-    cout << (in2+in) << endl;
+    std::string k =in.substr(0,1);
+    transform(k.begin(), k.end(), k.begin(), toupper);
+    in.erase(0,1);
+    in.insert(0,k);
+    cout << in << endl;
     return 0;
 
 }
