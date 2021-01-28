@@ -77,7 +77,7 @@ int main() {
     for(int i=0; i < m; i++)
     {   if (arr3[i]>0)
         {
-        arr3.erase(arr3.begin()+1);
+        arr3.erase(arr3.begin()+i);
             break;
         }
     }
